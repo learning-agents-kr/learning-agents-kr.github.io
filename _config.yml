@@ -20,7 +20,12 @@ discus-identifier: # add your discus identifier
 analytics: # Google Analytics
 
 # Build Settings
+# Conversion 
 markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
 plugins:
   - jekyll-sitemap
   - jekyll-paginate
