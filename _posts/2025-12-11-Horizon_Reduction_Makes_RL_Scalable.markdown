@@ -47,34 +47,46 @@ use_math:  true
     - 지금까지 offline GCRL 방법론들이 1M transitions 데이터셋으로는 제로 성능을 벗어나지 못하는 tasks
         
         ![image.png]({{site.baseurl}}/assets/img/251211/image.png)
-        
-- **Task-agnostic dataset**
-    
-    각 domain마다 task-agnostic하게 **1B (10억) transitions** 수집
-    
-    - Each requires 1000-1500 CPU hours and 279-551GB of disk space
-    
-    **Task-agnostic? [[링크](https://seohong.me/projects/ogbench/#:~:text=numbers%20of%20cubes.-,cube%2Dquadruple%2Dplay,-Example%20dataset%20trajectory)]**
-    
-    - Evaluation 환경은 풀고자 하는 task가 정해져 있음
-        - e.g., Cube 환경: Cubes들을 정해진 순서대로 정해진 위치에 pick & place
-        - e.g., Puzzle 환경: 특정 모양의 puzzle이 되도록 button을 누르며 색을 바꿈
-        - e.g., Maze 환경: 특정 위치에 도달
-    
-    - 풀고자 하는 task를 모른 채로 scripted policy를 사용하여 데이터 수집 (`*-play` dataset)
-        - e.g., Cube 환경: 아무 cubes들을 아무 데나 pick & place하며 수집
-        - e.g., Puzzle 환경: 아무 버튼이나 막 누르면서 수집
-        - e.g., Maze 환경: random하게 navigate하며 수집
-    
-    - 따라서 데이터셋은 보상 (goal 달성 여부)이 없는 $(s,a)$ pairs로 구성
-        - $\mathcal{D} = \lbrace \tau^{(n)} \rbrace_{n=1}^{N}$, $\tau=(s_0, a_0, s_1, a_1, \ldots, s_H)$.
-    
-- **Idealization:** Offline GCRL의 다른 challenging 요소를 최대한 배제
-    - Low-dimensional state-based observations (not visual observations)
-    - Oracle goal representations (e.g., 단순 좌표 뿐만 아니라 로봇 state 등도 포함)
-    - Out-of-distribution evaluation goals 제거
-    - 데이터셋의 충분한 coverage와 optimality 확보
-    
+
+<details style="padding-left:30px;">
+<summary><b>Task-agnostic dataset</b></summary>
+<div markdown="1" style="padding-left:15px;">
+
+각 domain마다 task-agnostic하게 **1B (10억) transitions** 수집
+
+- Each requires 1000-1500 CPU hours and 279-551GB of disk space
+
+**Task-agnostic? [[링크](https://seohong.me/projects/ogbench/#:~:text=numbers%20of%20cubes.-,cube%2Dquadruple%2Dplay,-Example%20dataset%20trajectory)]**
+
+- Evaluation 환경은 풀고자 하는 task가 정해져 있음
+    - e.g., Cube 환경: Cubes들을 정해진 순서대로 정해진 위치에 pick & place
+    - e.g., Puzzle 환경: 특정 모양의 puzzle이 되도록 button을 누르며 색을 바꿈
+    - e.g., Maze 환경: 특정 위치에 도달
+
+- 풀고자 하는 task를 모른 채로 scripted policy를 사용하여 데이터 수집 (`*-play` dataset)
+    - e.g., Cube 환경: 아무 cubes들을 아무 데나 pick & place하며 수집
+    - e.g., Puzzle 환경: 아무 버튼이나 막 누르면서 수집
+    - e.g., Maze 환경: random하게 navigate하며 수집
+
+- 따라서 데이터셋은 보상 (goal 달성 여부)이 없는 $(s,a)$ pairs로 구성
+    - $\mathcal{D} = \lbrace \tau^{(n)} \rbrace_{n=1}^{N}$, $\tau=(s_0, a_0, s_1, a_1, \ldots, s_H)$.
+
+<br>
+</div>
+</details>
+
+<details style="padding-left:30px;">
+<summary><b>Idealization:</b> Offline GCRL의 다른 challenging 요소를 최대한 배제</summary>
+<div markdown="1" style="padding-left:15px;">
+
+  - Low-dimensional state-based observations (not visual observations)
+  - Oracle goal representations (e.g., 단순 좌표 뿐만 아니라 로봇 state 등도 포함)
+  - Out-of-distribution evaluation goals 제거
+  - 데이터셋의 충분한 coverage와 optimality 확보
+
+<br>
+</div>
+</details>
 - **Baseline algorithms:** IQL, CRL, SAC+BC, Flow BC
 
 <br>
@@ -89,6 +101,8 @@ use_math:  true
 
 ![image.png]({{site.baseurl}}/assets/img/251211/image%201.png)
 
+<br>
+
 ### 기존 Offline RL 알고리즘의 성능은 모델 크기에 scalable하지 않는다.
 
 - SAC+BC를 1B 데이터셋에 대해 학습
@@ -101,7 +115,9 @@ use_math:  true
 
 # The Curse of Horizon
 
-## In Value Learning
+<details>
+<summary><h2 style="display:inline-block">In Value Learning</h2></summary>
+<div markdown="1" style="padding-left:15px;">
 
 ### **Hypothesis**
 
@@ -109,6 +125,8 @@ use_math:  true
 - Bias의 원인: 실제 Bellman equation에 등장하는 $\mathbb{E}_{s' \sim p(\cdot \mid s, a), a'\sim\pi(\cdot\mid s')}[Q^{\pi}(s', a')]$ 텀에서 기댓값 대신 sample $(s', a')$을 사용하기도 하고, 실제 action value가 아닌 $Q$ network를 bootstraping하기 때문에 bias는 존재할 수 밖에 없다.
 - *“Biases accumulate over horizon”* ⇒ reward signal과 먼 $(s_t, a_t)$까지 TD backups이 전달되어 오는 데 biases가 누적됨
     - $Q_\theta(s_{H}, a_{H})\rightarrow Q_\theta(s_{H-1}, a_{H-1}) \rightarrow Q_\theta(s_{H-2}, a_{H-2})\rightarrow \ldots \rightarrow Q_\theta(s_{t+1}, a_{t+1}) \rightarrow Q_\theta(s_{t}, a_{t})$
+
+<br>
 
 ### **Empirical evidence**
 
@@ -139,9 +157,14 @@ use_math:  true
     - 1-step DQN의 경우 하이퍼파라미터 조정을 해도 curse of horizon이 해결되지 않음
         
         ![image.png]({{site.baseurl}}/assets/img/251211/image%206.png)
-        
 
-## In Policy Learning
+<br>
+</div>
+</details>
+        
+<details>
+<summary><h2 style="display:inline-block">In Policy Learning</h2></summary>
+<div markdown="1" style="padding-left:15px;">
 
 - Horizon이 길수록 상태 $s$에서 action-value 값이 가장 높은 행동 $a$를 mapping하는 policy learning이 어려워진다.
     - 말로 이렇게만 써있어서 공감하기 어려웠음
@@ -149,6 +172,9 @@ use_math:  true
     - $\pi(a \mid s, g)$ ⇒ $\pi^h(w \mid s, g)$  + $\pi^l(a \mid s, w)$
     - High-level policy $\pi^h(w \mid s, g)$는 subgoal $w$를 출력
     - Low-level polict $\pi^l(a \mid s, w)$은 subgoal 달성을 위한 행동 $a$를 출력
+  
+</div>
+</details>
 
 <br>
 
@@ -159,6 +185,8 @@ use_math:  true
 - **$n$-step SAC+BC:** value learning에 $n$-step return을 사용하는 것이 curse of horizon을 완화할 수 있다는 것을 보이기 위해 **$n$-step SAC+BC**를 실험에 포함
 - **Hierarchical flow BC / HIQL:** policy learning에 hierarchical policy를 사용하는 것이 curse of horizon을 완화할 수 있다는 것을 보이기 위해 **hierarchical flow BC**와 **HIQL**을 실험에 포함
 - **SHARSA:** n-step return과 hierarchical policy를 사용하여 curse of horizon을 더 많이 완화할 수 있는 이 논문에서 제안하는 알고리즘
+
+<br>
 
 ## Learning a high-level policy and low-level policy
 
@@ -185,12 +213,19 @@ $$
     
     ![image.png]({{site.baseurl}}/assets/img/251211/image%209.png)
     
+<br>
 
 ### Low-level policy
 
 1. 그냥 일반적인 goal-conditioned flow BC로 학습 ⇒ SHARSA
 2. High-level policy learning 때 학습했던 것처럼 또 다른 SARSA + rejection sampling 사용 ⇒ Double SHARSA
 
+<br>
+
+---
+
 ## Results
 
 ![image.png]({{site.baseurl}}/assets/img/251211/image_10.png)
+
+<br>
