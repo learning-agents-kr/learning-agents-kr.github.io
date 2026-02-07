@@ -1274,6 +1274,7 @@ a.newer-posts:hover {
   padding-bottom: 30px;
   margin: 30px 0;
   border-bottom: 1px solid #a0a0a0;
+  flex-direction: column;
 }
 
 .page-footer .page-share {
