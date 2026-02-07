@@ -810,7 +810,6 @@ blockquote {
   padding-left: 1.1rem;
   margin-left: 1rem;
   font-style: italic;
-  color: #ada8a8;
 }
 
 pre {
@@ -1518,4 +1517,44 @@ li {
   margin-left: 15px;
   margin-top: 15px;
   margin-right: 15px;
+}
+
+.PageNavigation {
+  font-size: 14px;
+  display: block;
+  width: auto;
+  overflow: hidden;
+}
+.PageNavigation a {
+  display: block;
+  width: 50%;
+  float: left;
+  margin: 1em 0;
+  color: rgba(0, 113, 118, 1);
+  font-weight: 600;
+  font-size: 1.1em;
+}
+.PageNavigation .next {
+  text-align: right;
+}
+.PageNavigation .prev {
+  text-align: left;
+}
+
+/* 1. 기본 상태: 모든 태그 섹션을 보여줍니다. */
+.tag-section {
+  display: block;
+  margin-bottom: 2rem;
+}
+
+/* 2. 조건부 상태: 
+    전체 컨테이너(.blog-tags) 안에 ':target'이 된 요소가 '하나라도' 존재한다면,
+    일단 모든 섹션을 숨깁니다. */
+.blog-tags:has(.tag-section:target) .tag-section {
+  display: none;
+}
+
+/* 3. 그 중 현재 URL의 해시(#)와 일치하는 ':target' 요소만 다시 보여줍니다. */
+.blog-tags:has(.tag-section:target) .tag-section:target {
+  display: block;
 }
