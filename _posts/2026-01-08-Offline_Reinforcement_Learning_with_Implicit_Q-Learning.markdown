@@ -25,6 +25,6 @@ use_math:  true
 
 ## 발표 자료 
 
-<embed src="https://learning-agents-kr.github.io/assets/img/260108/20260108_implicit_q_learning_dmk.pdf" width="100%" height="600px" type="application/pdf" />
+<object data="https://learning-agents-kr.github.io/assets/img/260108/20260108_implicit_q_learning_dmk.pdf" width="100%" height="600px" type="application/pdf"></object>
 
 <br>

@@ -25,6 +25,6 @@ use_math:  true
 
 ## 발표 자료 
 
-<embed src="https://learning-agents-kr.github.io/assets/img/251030/TDFlow.pdf" width="100%" height="600px" type="application/pdf" />
+<object data="https://learning-agents-kr.github.io/assets/img/251030/TDFlow.pdf" width="100%" height="600px" type="application/pdf"></object>
 
 <br>
