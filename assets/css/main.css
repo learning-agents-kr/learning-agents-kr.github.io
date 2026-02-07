@@ -1559,3 +1559,32 @@ li {
 .blog-tags:has(.tag-section:target) .tag-section:target {
   display: block;
 }
+
+.aside-box {
+  display: flex;
+  width: 100%;
+  border-radius: 10px;
+  border:1px solid #1c13011c;
+  background-color: transparent;
+  padding-inline: 12px 20px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.aside-box-side {
+  margin-top: 4px;
+}
+
+.aside-box-content {
+  display: flex;
+  flex-direction: column;
+  min-width: 0px;
+  margin-inline-start: 8px;
+  width: 100%;
+  min-height: 32px;
+}
+
+.aside-box-content > p:first-child {
+  margin-block-start: 0px;
+  margin-top: 2px;
+}
