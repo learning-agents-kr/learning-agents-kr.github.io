@@ -1,37 +1,13 @@
-# Flexible-Jekyll is a simple and clean theme for Jekyll
+# Learning Agents
 
-![](https://github.com/artemsheludko/flexible-jekyll/blob/master/assets/img/promo-img.jpg?raw=true)
+강화학습 논문 리뷰 스터디 Learning Agents에서 그 동안 발표한 자료를 기록하는 레포지토리입니다.
 
-## Demo
+<br>
 
-Check the theme in action [Demo](https://artemsheludko.github.io/flexible-jekyll/)
 
-The main page would look like this:
+## License and Credits
 
-![Main page preview](https://github.com/artemsheludko/flexible-jekyll/blob/master/assets/img/home-page.jpg?raw=true)
+- License: GNU General Public License v3.0
+- Credits for this template: [Flexible-Jekyll](https://github.com/artemsheludko/flexible-jekyll)
+- Credits for the profile image and favicon : [@Juicy_fish](https://www.freepik.com/free-vector/graident-ai-robot-vectorart_125887871.htm#fromView=keyword&page=1&position=1&uuid=f998828f-4256-42e8-9121-171ddd666008&query=Robot+emoji)
 
-The post page would look like this:
-
-![Post page preview](https://github.com/artemsheludko/flexible-jekyll/blob/master/assets/img/post-example.jpg?raw=true)
-
-## Features
-
-- [Google Fonts](https://fonts.google.com/)
-- [Font Awesome](http://fontawesome.io/)
-- [Disqus](https://disqus.com/)
-- [Analytics](https://analytics.google.com/analytics/web/)
-- Support Emoji
-
-## Installation:
-
-Fork the ``master`` branch and follow the [Jekyll Installation Documentation](https://jekyllrb.com/docs/installation/).
-
-## License
-
-GNU General Public License v3.0
-
-## Premium Themes by Artem
-
-| [![Coderon Jekyll Theme](https://github.com/artemsheludko/artemsheludko.github.io/raw/master/assets/preview/coderon-preview.png?raw=true)](https://jekyllthemes.io/theme/coderon-blog-jekyll-theme) | [![Renva Portfolio Jekyll Theme](https://github.com/artemsheludko/artemsheludko.github.io/raw/master/assets/preview/renva-preview.png?raw=true)](https://jekyllthemes.io/theme/renva-portfolio-jekyll-theme) | [![Nomod](https://github.com/artemsheludko/artemsheludko.github.io/raw/master/assets/preview/nomod-preview.png?raw=true)](https://jekyllthemes.io/theme/nomod-blog-jekyll-theme) |
-|:---:|:---:|:---:|
-| **Coderon** | **Renva** | **Nomod** |
