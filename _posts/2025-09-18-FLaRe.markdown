@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[논문 리뷰] FLaRe: Achieving Masterful and Adaptive Robot Policies with Large-Scale Reinforcement Learning Fine-TUning"
+title: "[논문 리뷰] FLaRe: Achieving Masterful and Adaptive Robot Policies with Large-Scale Reinforcement Learning Fine-Tuning"
 date: 2025-9-18 20:30:00 +0300
 img: 250918/image.png # Add image post (optional)
 presenter: 김재훈
@@ -11,9 +11,9 @@ use_math:  true
 <div class="note-box" markdown="1">
 <p class="note-box-title">논문 정보</p>
 
-**제목:** FLaRe: Achieving Masterful and Adaptive Robot Policies with Large-Scale Reinforcement Learning Fine-TUning
+**제목:** FLaRe: Achieving Masterful and Adaptive Robot Policies with Large-Scale Reinforcement Learning Fine-Tuning
 
-**저자:** Jiaheng Hu, Rose Hendrix, Ali Farhadi, Aniruddha Kembhavi, Roberto Martin-Martin, Peter Stone, Kuo-Hao Zeng, Kiana Ehsani
+**저자:** Jiaheng Hu, Rose Hendrix, Ali Farhadi, Aniruddha Kembhavi, Roberto Martin-Martin, Peter Stone, Kuo-Hao Zeng, Kiana Ehsani.
 
 **학회:** ICRA 2025
 
