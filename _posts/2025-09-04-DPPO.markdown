@@ -1,0 +1,30 @@
+---
+layout: post
+title: "[논문 리뷰] Direct Preference-based Policy Optimization without Reward Modeling"
+date: 2025-9-4 20:30:00 +0300
+img: 250904/image.png # Add image post (optional)
+presenter: 김민경
+tags: [김민경]
+use_math:  true
+---
+
+<div class="note-box" markdown="1">
+<p class="note-box-title">논문 정보</p>
+
+**제목:** Direct Preference-based Policy Optimization without Reward Modeling
+
+**저자:** Gaon An, Junhyeok Lee, Xingdong Zuo, Norio Kosaka, Kyung-Min Kim, Hyun Oh Song, *SNU & NAVER*.
+
+**학회:** NeurIPS 2023
+
+**링크:** [https://arxiv.org/abs/2301.12842](https://arxiv.org/abs/2301.12842)
+
+</div>
+
+<br>
+
+## 발표 자료 
+
+<object data="https://learning-agents-kr.github.io/assets/img/250904/ddpo v0.2.pdf" width="100%" height="600px" type="application/pdf"></object>
+
+<br>
