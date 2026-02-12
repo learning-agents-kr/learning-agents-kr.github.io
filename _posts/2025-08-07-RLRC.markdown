@@ -1,0 +1,30 @@
+---
+layout: post
+title: "[논문 리뷰] RLRC: Reinforcement Learning-based Recovery for Compressed Vision-Language-Action Models"
+date: 2025-8-7 20:30:00 +0300
+img: 250807/image.png # Add image post (optional)
+presenter: 김동민
+tags: [김동민]
+use_math:  true
+---
+
+<div class="note-box" markdown="1">
+<p class="note-box-title">논문 정보</p>
+
+**제목:** RLRC: Reinforcement Learning-based Recovery for Compressed Vision-Language-Action Models
+
+**저자:** Yuxuan Chen, Xiao Li.
+
+**학회:** Preprint
+
+**링크:** [https://arxiv.org/abs/2506.17639](https://arxiv.org/abs/2506.17639)
+
+</div>
+
+<br>
+
+## 발표 자료 
+
+<object data="https://learning-agents-kr.github.io/assets/img/250807/20250807_rlrc_dmk.pdf" width="100%" height="600px" type="application/pdf"></object>
+
+<br>
