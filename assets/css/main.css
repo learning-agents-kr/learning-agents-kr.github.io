@@ -77,8 +77,8 @@ hr {
   /* 1 */
   overflow: visible;
   /* 2 */
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 6px;
+  margin-bottom: 6px;
   border: 0;
   border-top: 1px solid #F7F1F1;
   border-bottom: 1px solid #fff;
@@ -1562,4 +1562,33 @@ tr:nth-child(even) {
 tr:hover {
     background: silver;
     cursor: pointer;
+}
+
+ul {
+  margin-bottom: 0;
+}
+
+ul ul {
+  padding-left:1.5em;
+}
+
+ul ol {
+  padding-left:1.5em;
+}
+
+ol ol {
+  padding-left:1.5em;
+}
+
+ol ul {
+  padding-left:1.5em;
+}
+
+details > summary > p {
+  margin-top: 0;
+  margin-bottom: 3px;
+}
+
+details div > p:first-child {
+  margin-top: 0;
 }
