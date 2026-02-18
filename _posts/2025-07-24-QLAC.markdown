@@ -13,7 +13,7 @@ use_math:  true
 
 **제목:** Sample-Efficient Reinforcement Learning with Action Chunking
 
-**저자:** Qiyang Li, Zhiyuan Zhou, Sergey Levine, UC Berkeley.
+**저자:** Qiyang Li, Zhiyuan Zhou, Sergey Levine, *UC Berkeley*.
 
 **학회:** NeurIPS 2025
 
