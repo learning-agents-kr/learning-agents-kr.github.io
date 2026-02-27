@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[논문 리뷰] Direct Prefernce Optimization: Your Language Model is Secretly a Reward Model"
+title: "[논문 리뷰] Direct Preference Optimization: Your Language Model is Secretly a Reward Model"
 date: 2025-11-13 20:30:00 +0300
 img: 251113/image.png # Add image post (optional)
 presenter: 김민경
@@ -11,7 +11,7 @@ use_math:  true
 <div class="note-box" markdown="1">
 <p class="note-box-title">논문 정보</p>
 
-**제목:** Direct Prefernce Optimization: Your Language Model is Secretly a Reward Model
+**제목:** Direct Preference Optimization: Your Language Model is Secretly a Reward Model
 
 **저자:** Rafael Rafailov, Archit Sharma, Eric Mitchell, Stefano Ermon, Christopher D. Manning, Chelsea Finn, *Stanford University*.
 
