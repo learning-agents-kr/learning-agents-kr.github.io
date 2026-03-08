@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[논문 리뷰] Flow Q-Learning"
+title: "[논문 리뷰] Flow Matching Policy Gradients"
 date: 2026-3-5 20:30:00 +0300
 img: 260305/image_1.png # Add image post (optional)
 presenter: 이동진
