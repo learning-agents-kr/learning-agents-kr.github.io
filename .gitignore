@@ -35,3 +35,4 @@ Temporary Items
 
 .gitignore
 **/.DS_Store
+inputs/*
