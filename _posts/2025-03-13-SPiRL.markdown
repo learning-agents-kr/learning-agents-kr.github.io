@@ -1,0 +1,30 @@
+---
+layout: post
+title: "[논문 리뷰] Accelerating RL with Learned Skill Priors"
+date: 2025-3-13 20:30:00 +0300
+img: 250313/image.png # Add image post (optional)
+presenter: 홍준형
+tags: [홍준형]
+use_math:  true
+---
+
+<div class="note-box" markdown="1">
+<p class="note-box-title">논문 정보</p>
+
+**제목:** Accelerating Reinforcement Learning with Learned Skill Priors
+
+**저자:** Karl Pertsch, Youngwoon Lee, Joseph J. Lim
+
+**학회:** CoRL 2020
+
+**링크:** [https://arxiv.org/abs/2010.11944](https://arxiv.org/abs/2010.11944)
+
+</div>
+
+<br>
+
+## 발표 자료
+
+<object data="https://learning-agents-kr.github.io/assets/img/250313/SPIRL_Learning_Agent_250313.pdf" width="100%" height="600px" type="application/pdf"></object>
+
+<br>
