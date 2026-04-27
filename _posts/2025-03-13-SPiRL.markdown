@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[논문 리뷰] Accelerating RL with Learned Skill Priors"
+title: "[논문 리뷰] Accelerating Reinforcement Learning with Learned Skill Priors"
 date: 2025-3-13 20:30:00 +0300
 img: 250313/image.png # Add image post (optional)
 presenter: 홍준형
