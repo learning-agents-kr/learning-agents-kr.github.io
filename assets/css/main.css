@@ -1120,27 +1120,68 @@ footer .copyright {
   margin-block-end: 0;
 }
 
-a.older-posts, a.newer-posts {
-  font-size: 18px;
-  display: inline-block;
+.pagination {
+  width: 100%;
+}
+
+.pagination .pagination-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 20px 0;
+  margin: 0;
+  gap: 4px;
+}
+
+.pagination .pagination-list li {
+  display: inline-flex;
+}
+
+.pagination .pagination-list .pagination-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 36px;
+  padding: 0 10px;
+  border-radius: 6px;
+  font-size: 15px;
   color: #515151;
-  -webkit-transition: -webkit-transform .2s;
-  transition: -webkit-transform .2s;
-  -o-transition: transform .2s;
-  transition: transform .2s;
-  transition: transform .2s, -webkit-transform .2s;
+  text-decoration: none;
+  transition: all .2s;
+  cursor: pointer;
 }
 
-a.older-posts:hover {
-  -webkit-transform: translateX(5px);
-      -ms-transform: translateX(5px);
-          transform: translateX(5px);
+.pagination .pagination-list .pagination-link:hover {
+  background-color: rgba(51, 48, 48, 0.08);
+  color: #333030;
 }
 
-a.newer-posts:hover {
-  -webkit-transform: translateX(-5px);
-      -ms-transform: translateX(-5px);
-          transform: translateX(-5px);
+.pagination .pagination-list .pagination-link.active {
+  background-color: #333030;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: default;
+}
+
+.pagination .pagination-list .pagination-link.active:hover {
+  background-color: #333030;
+  color: #ffffff;
+}
+
+.pagination .pagination-list .pagination-link.disabled {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+
+.pagination .pagination-list a.newer-posts:hover {
+  transform: translateX(-2px);
+}
+
+.pagination .pagination-list a.older-posts:hover {
+  transform: translateX(2px);
 }
 
 /* - - - - - - - - - - Post Page Styles - - - - - - - - - - */
