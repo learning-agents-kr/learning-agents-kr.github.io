@@ -1,0 +1,48 @@
+---
+layout: main
+title: 검색
+---
+<div class="search-page">
+  <h2 class="search-query-label" id="search-query-label"></h2>
+  <div id="search-results"></div>
+  <form class="search-form" action="{{ site.baseurl }}/search/">
+    <div class="search-input-wrapper">
+      <i class="fa fa-search search-icon" aria-hidden="true"></i>
+      <input type="text" name="q" id="search-input" placeholder="포스트 검색..." autocomplete="off">
+      <button type="submit">검색</button>
+    </div>
+  </form>
+</div>
+<input type="hidden" id="sjs-trigger">
+
+<script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script>
+<script>
+  var query = new URLSearchParams(window.location.search).get('q') || '';
+  document.getElementById('search-input').value = query;
+  document.getElementById('search-query-label').textContent = query ? '"' + query + '" 검색 결과' : '검색';
+
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('sjs-trigger'),
+    resultsContainer: document.getElementById('search-results'),
+    json: '{{ site.baseurl }}/search.json',
+    searchResultTemplate: '<article class="post" data-img="{img}"><a class="post-thumbnail" style="background-image: url({{ site.baseurl }}/assets/img/{img})" href="{url}"></a><div class="post-content"><h2 class="post-title"><a href="{url}">{title}</a></h2><span class="post-date">작성자: {presenter}&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span><span class="post-date">{date}</span></div></article>',
+    noResultsText: '<p class="search-no-results">검색 결과가 없습니다.</p>',
+    limit: 20,
+    fuzzy: false,
+    onSearchEnd: function() {
+      document.querySelectorAll('#search-results .post').forEach(function(el) {
+        if (!el.dataset.img) {
+          el.classList.add('no-thumbnail');
+        }
+      });
+    }
+  });
+
+  if (query) {
+    setTimeout(function() {
+      var trigger = document.getElementById('sjs-trigger');
+      trigger.value = query;
+      trigger.dispatchEvent(new Event('input'));
+    }, 200);
+  }
+</script>

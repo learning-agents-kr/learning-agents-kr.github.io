@@ -1129,7 +1129,7 @@ footer .copyright {
   justify-content: center;
   align-items: center;
   list-style: none;
-  padding: 20px 0;
+  padding: 10px 0;
   margin: 0;
   gap: 4px;
 }
@@ -1648,4 +1648,105 @@ details > summary > p {
 
 details div > p:first-child {
   margin-top: 0;
+}
+
+/* - - - - - - - - - - Search Styles - - - - - - - - - - */
+.search-container,
+.search-page {
+  width: 100%;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-form {
+  width: 100%;
+  max-width: 500px;
+}
+
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 14px;
+  color: #a0a0a0;
+  font-size: 14px;
+  pointer-events: none;
+}
+
+.search-input-wrapper input[type="text"] {
+  flex: 1;
+  padding: 10px 16px 10px 38px;
+  border: 1px solid #ecf0f1;
+  border-radius: 8px 0 0 8px;
+  font-size: 14px;
+  font-family: 'Lato', sans-serif;
+  color: #515151;
+  background-color: #fafafa;
+  box-sizing: border-box;
+  transition: border-color .2s, box-shadow .2s;
+  outline: none;
+}
+
+.search-input-wrapper input[type="text"]:focus {
+  border-color: #a0a0a0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  background-color: #ffffff;
+}
+
+.search-input-wrapper button[type="submit"] {
+  padding: 10px 16px;
+  background-color: #333030;
+  color: #ffffff;
+  border: none;
+  border-radius: 0 8px 8px 0;
+  font-size: 14px;
+  font-family: 'Lato', sans-serif;
+  cursor: pointer;
+  transition: background-color .2s;
+  white-space: nowrap;
+}
+
+.search-input-wrapper button[type="submit"]:hover {
+  background-color: #263959;
+}
+
+
+#search-results {
+  width: 100%;
+}
+
+#search-results .post {
+  max-width: 100%;
+}
+
+.search-no-results {
+  text-align: center;
+  color: #a0a0a0;
+  font-size: 14px;
+  padding: 20px 0;
+}
+
+.search-query-label {
+  width: 100%;
+  padding-bottom: 20px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 30px;
+  font-weight: 400;
+  color: #333030;
+  text-align: left;
+}
+
+.post.no-thumbnail .post-thumbnail {
+  display: none;
+}
+
+.post.no-thumbnail .post-content {
+  width: 100%;
 }
